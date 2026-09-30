@@ -739,3 +739,31 @@ button{font-family:inherit;color:inherit}
   .roster-cell:hover{transform:none}
   .lb-row:hover{transform:none}
 }
+
+/* ---------- Coaching panel ---------- */
+.coach{border:1px solid var(--line);border-radius:12px;background:var(--surface-2, var(--bg));padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.coach-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.coach-kicker{font-family:var(--font-ui);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:#3BBFA0;font-weight:700}
+.coach-tier{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--text-2);border:1px solid var(--line-strong);border-radius:999px;padding:3px 10px}
+.coach-headline{margin:0;font-family:var(--font-display);font-size:18px;line-height:1.35;color:var(--text)}
+.coach-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.coach-item{display:flex;gap:12px;align-items:flex-start;background:var(--surface, #fff);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.coach-rank{flex:0 0 24px;height:24px;border-radius:50%;background:var(--ink-800);color:#fff;font-family:var(--font-mono);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.coach-body{flex:1;min-width:0}
+.coach-title{display:flex;justify-content:space-between;gap:8px;font-family:var(--font-ui);font-size:13px;font-weight:700;color:var(--text)}
+.coach-pts{font-family:var(--font-mono);font-size:12px;color:#1B6F5C;white-space:nowrap}
+.coach-action{font-family:var(--font-ui);font-size:13px;color:var(--text);margin-top:4px;line-height:1.45}
+.coach-detail{font-family:var(--font-ui);font-size:12px;color:var(--text-2);margin-top:4px;line-height:1.5}
+.coach-watch,.coach-strengths{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.coach-sub{font-family:var(--font-ui);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-3);margin-right:4px}
+.coach-chip{font-family:var(--font-ui);font-size:11px;color:var(--text-2);border:1px solid var(--line-strong);border-radius:999px;padding:3px 9px}
+.coach-chip b{font-family:var(--font-mono);color:#8B6200}
+.coach-chip.ok{color:#1B6F5C;border-color:rgba(27,111,92,0.35)}
+.coach-notes ul{margin:6px 0 0;padding-left:18px;font-family:var(--font-ui);font-size:12.5px;color:var(--text);line-height:1.5}
+.coach-foot{font-family:var(--font-ui);font-size:11px;color:var(--text-3);border-top:1px solid var(--line);padding-top:10px}
+.coach-foot b{color:var(--text);font-family:var(--font-mono)}
+@media (max-width: 720px){
+  .coach{padding:14px}
+  .coach-headline{font-size:16px}
+  .coach-item{padding:10px 12px}
+}
