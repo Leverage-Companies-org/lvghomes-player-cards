@@ -21,6 +21,8 @@ export interface Player {
   stats: Stats;
   weights?: WeightMap;
   headshot?: string;
+  /** Optional manager notes from the sheet (Apps Script `notes` field). */
+  notes?: string[];
 }
 
 export interface PlayerWithOverall extends Player {

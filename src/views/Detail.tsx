@@ -4,6 +4,7 @@ import { withOverall, tierLabel } from '../overall';
 import { useCountUp } from '../lib/useCountUp';
 import { fmtStat, fmtMoneyShort } from '../lib/formatters';
 import { PlayerCard } from '../components/PlayerCard';
+import { CoachingPanel } from '../components/CoachingPanel';
 import { STAT_META } from '../data';
 import type { Player } from '../types';
 
@@ -128,6 +129,8 @@ export function Detail({ vps, ams }: Props) {
               );
             })}
           </div>
+
+          {player.overall > 0 && <CoachingPanel player={player} />}
 
           <p className="legend">
             Overall is a weighted score (0–100) based on each YTD metric vs its target from the Google Sheet.

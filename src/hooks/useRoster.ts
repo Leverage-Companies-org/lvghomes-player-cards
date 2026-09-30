@@ -13,6 +13,12 @@ type ApiResponse = {
   updatedAt?: string;
 };
 
+function normalizeNotes(raw: unknown): string[] | undefined {
+  if (Array.isArray(raw)) return raw.map(String).map(s => s.trim()).filter(Boolean);
+  if (typeof raw === 'string') return raw.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  return undefined;
+}
+
 function normalizePlayer(p: ApiPlayer, role: 'vp' | 'am'): Player {
   const name = String(p.name || '');
   return {
@@ -21,6 +27,7 @@ function normalizePlayer(p: ApiPlayer, role: 'vp' | 'am'): Player {
     role: role === 'vp' ? 'Vice President' : 'Acquisition Manager',
     stats: (p.stats as Player['stats']) || {},
     weights: (p.weights as WeightMap) || undefined,
+    notes: normalizeNotes(p.notes),
   };
 }
 
